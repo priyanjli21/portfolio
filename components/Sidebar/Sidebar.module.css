@@ -1,0 +1,69 @@
+.sidebar {
+  display: none;
+  position: fixed;
+  top: 64px;
+  right: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background-color: var(--bg-primary);
+  border-left: 3px solid var(--border-dark);
+  z-index: 1001;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    display: flex;
+  }
+}
+
+.sidebarBox {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border-bottom: 3px solid var(--border-dark);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s cubic-bezier(0.25, 1, 0.5, 1), color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebarBox:last-child {
+  border-bottom: none;
+}
+
+.vertText {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: clamp(0.9rem, 1.8vh, 1.15rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  user-select: none;
+  white-space: nowrap;
+  padding: 4px 0;
+}
+
+/* Active State: Inverted Black Box with White Text */
+.activeBox {
+  background-color: var(--bg-dark) !important;
+  color: #FAF8F5 !important;
+}
+
+.activeBox .vertText {
+  color: #FAF8F5 !important;
+}
+
+/* Hover on Inactive Box */
+.sidebarBox:not(.activeBox):hover {
+  background-color: var(--bg-secondary);
+}
+
+.sidebarBox:not(.activeBox):hover .vertText {
+  color: var(--accent-coral);
+}

@@ -1,0 +1,124 @@
+.pubSection {
+  padding: var(--space-9) 0;
+  background-color: var(--bg-secondary);
+  border-bottom: 3px solid var(--border-dark);
+  position: relative;
+}
+
+.sectionHeader {
+  margin-bottom: var(--space-8);
+}
+
+.sectionSuper {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-indigo);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+.pubsStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.pubCard {
+  background-color: var(--bg-primary);
+  border: 2.5px solid var(--border-dark);
+  box-shadow: 6px 6px 0px var(--border-dark);
+  padding: var(--space-6) var(--space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pubCard:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0px var(--border-dark);
+}
+
+.pubTop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.venueBadge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  background-color: var(--bg-dark);
+  color: var(--text-inverse);
+  text-transform: uppercase;
+}
+
+.statusBadge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border: 1.5px solid var(--border-dark);
+  text-transform: uppercase;
+}
+
+.pubTitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.pubSummary {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.pubBottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1.5px dashed var(--border-light);
+  margin-top: var(--space-2);
+}
+
+.pubTagsRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.pubTag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-light);
+}
+
+.pubActionBtn {
+  margin-top: 0;
+}

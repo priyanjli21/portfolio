@@ -1,0 +1,171 @@
+.tiltCardWrapper {
+  perspective: 1200px;
+  position: relative;
+  width: 100%;
+}
+
+.tiltedCard {
+  border: 3px solid var(--border-dark);
+  padding: 14px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+  overflow: hidden;
+}
+
+.tiltedCard:hover {
+  z-index: 20;
+}
+
+/* Tactile Folder Tab at Top of Card */
+.cardFolderTab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 2px dashed rgba(10, 10, 10, 0.25);
+  padding-bottom: 8px;
+  transform: translateZ(16px);
+  pointer-events: none;
+}
+
+.cardIndexBadge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 900;
+  background-color: #0A0A0A;
+  color: #FAF8F5;
+  padding: 2px 8px;
+  letter-spacing: 0.08em;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
+}
+
+.cardTelemetryTag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+}
+
+.cardMainRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+/* 3D Pop-out layers */
+.cardLeftContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transform: translateZ(24px);
+  pointer-events: none;
+}
+
+.cardTitle {
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.cardSubtitle {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.92;
+}
+
+.cardThumbnail {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #0A0A0A;
+  box-shadow: 3px 3px 0px #0A0A0A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transform: translateZ(32px);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Firing border beam on hover */
+.tiltedCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #FFFFFF, transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.tiltedCard:hover::before {
+  left: 100%;
+}
+
+/* Live Animation 1: DAG Pulse */
+.dagPulse {
+  animation: dagTravel 2s infinite linear;
+}
+
+@keyframes dagTravel {
+  0% { stroke-dashoffset: 20; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.nodeGlow {
+  animation: nodeBeat 1.5s infinite ease-in-out alternate;
+}
+
+@keyframes nodeBeat {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.2); }
+}
+
+/* Live Animation 2: Waveform oscillation */
+.wavePath {
+  animation: waveShift 3s infinite linear;
+}
+
+@keyframes waveShift {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 40; }
+}
+
+/* Live Animation 3: Radar laser sweep */
+.radarLaser {
+  animation: laserSweep 2s infinite ease-in-out alternate;
+}
+
+@keyframes laserSweep {
+  0% { transform: translateY(0px); opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { transform: translateY(32px); opacity: 0.4; }
+}
+
+.cornerReticle {
+  transition: transform 0.2s ease;
+}
+
+.tiltedCard:hover .cornerReticle {
+  transform: scale(1.15);
+}

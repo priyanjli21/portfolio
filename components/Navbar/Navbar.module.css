@@ -1,0 +1,161 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: var(--bg-primary);
+  border-bottom: 3px solid var(--border-dark);
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+}
+
+.navContainer {
+  width: 100%;
+  height: 100%;
+  padding-left: 40px;
+  padding-right: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.rightGroup {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+.navItem {
+  height: 100%;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  padding: 0 24px;
+  line-height: 1;
+  border-left: 3px solid var(--border-dark);
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background-color 0.2s cubic-bezier(0.25, 1, 0.5, 1), color 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Hover on Inactive Nav Items: Exactly like Sidebar (cream bg, coral red text) */
+.navItem:not(.activeNavItem):not(.resumeItem):hover {
+  background-color: var(--bg-secondary);
+  color: var(--accent-coral);
+}
+
+.navItem:not(.activeNavItem):not(.resumeItem):hover svg {
+  stroke: var(--accent-coral);
+  color: var(--accent-coral);
+}
+
+/* Active State: Identical to Sidebar .activeBox (Inverted Black Box with White Text) */
+.activeNavItem {
+  background-color: var(--bg-dark) !important;
+  color: #FAF8F5 !important;
+}
+
+.activeNavItem svg {
+  stroke: #FAF8F5;
+  color: #FAF8F5;
+}
+
+/* Resume Item */
+.resumeItem {
+  background-color: var(--accent-gold);
+  color: #0A0A0A;
+}
+
+.resumeItem:hover {
+  background-color: var(--bg-dark);
+  color: var(--accent-gold);
+}
+
+.resumeIcon {
+  stroke-width: 3;
+}
+
+.sectionItem {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .sectionItem {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .navContainer {
+    padding-left: 16px;
+  }
+  .title {
+    font-size: 1.05rem;
+  }
+  .navItem {
+    padding: 0 12px;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* NDA Access Button in Top Nav */
+.ndaNavBtn {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  background-color: var(--bg-primary);
+  border: none;
+  border-left: 3px solid var(--border-dark);
+}
+
+.ndaNavBtn:hover {
+  background-color: var(--bg-secondary);
+  color: var(--accent-coral);
+}
+
+.ndaNavBtn:hover svg {
+  stroke: var(--accent-coral);
+  color: var(--accent-coral);
+}
+
+.ndaNavBtnUnlocked {
+  background-color: var(--bg-primary);
+  color: #16A34A;
+}
+
+.ndaNavBtnUnlocked:hover {
+  background-color: var(--bg-secondary);
+  color: #16A34A;
+}
+
+.ndaContent {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+

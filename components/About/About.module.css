@@ -1,0 +1,345 @@
+.aboutSection {
+  padding: var(--space-9) 0;
+  background-color: var(--bg-secondary);
+  border-bottom: 3px solid var(--border-dark);
+  position: relative;
+}
+
+.sectionHeader {
+  margin-bottom: var(--space-7);
+}
+
+.sectionSuper {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-coral);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-7);
+}
+
+@media (min-width: 960px) {
+  .aboutGrid {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}
+
+.bioBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.bioQuote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  line-height: 1.35;
+  color: var(--text-primary);
+  border-left: 5px solid var(--accent-coral);
+  padding-left: var(--space-4);
+}
+
+.bioBody {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.bioBody p {
+  margin-bottom: var(--space-4);
+}
+
+.bioBody p:last-of-type {
+  margin-bottom: 0;
+}
+
+.bioSubheading {
+  font-family: var(--font-sans);
+  font-size: 1.02rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.bioTag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  background-color: var(--bg-dark);
+  color: #FAF8F5;
+  padding: 1px 6px;
+  border-radius: 0;
+  letter-spacing: 0.05em;
+}
+
+.bioSectionBlock p {
+  margin-bottom: 0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.statCard {
+  background-color: var(--bg-primary);
+  border: 2px solid var(--border-dark);
+  box-shadow: 4px 4px 0px var(--border-dark);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px var(--border-dark);
+}
+
+.statValue {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.statHighlight {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-coral);
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+/* Education Stack */
+.eduCard {
+  margin-top: var(--space-4);
+  background-color: var(--bg-primary);
+  border: 2px solid var(--border-dark);
+  box-shadow: 4px 4px 0px var(--border-dark);
+  padding: var(--space-4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.eduCard:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px var(--border-dark);
+}
+
+.eduTitle {
+  font-size: 1.1rem;
+  font-weight: 900;
+  margin-bottom: 2px;
+}
+
+.eduInstitution {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.eduMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ========================================================================= */
+/* UNLOCKED: Staff / Senior AI Engineering Dossier                           */
+/* ========================================================================= */
+.unlockedAboutDossier {
+  margin-top: var(--space-7);
+  background: #FFFFFF;
+  border: 3px solid #0A0A0A;
+  box-shadow: 6px 6px 0px #0A0A0A;
+  padding: var(--space-6);
+  position: relative;
+}
+
+.unlockedHeaderBanner {
+  background: #0A0A0A;
+  color: #FAF8F5;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: var(--space-5);
+  border: 2px solid #0A0A0A;
+}
+
+.unlockedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 900;
+  color: #10B981;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.unlockedClearance {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.dossierGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 960px) {
+  .dossierGrid {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.dossierMain {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.dossierHeading {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 8px;
+}
+
+.dossierText {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.dossierText strong {
+  color: #0A0A0A;
+}
+
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.pillarCard {
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border-dark);
+  padding: 12px 14px;
+  border-left-width: 4px;
+}
+
+.pillarTitle {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.pillarDesc {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.scopeBox {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-dark);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.scopeTitle {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  border-bottom: 1.5px solid var(--border-dark);
+  padding-bottom: 6px;
+}
+
+.scopeMetricsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scopeMetricItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.scopeMetricVal {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--accent-indigo);
+}
+
+.scopeMetricLabel {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}

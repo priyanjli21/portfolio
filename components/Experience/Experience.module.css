@@ -1,0 +1,228 @@
+.experienceSection {
+  padding: var(--space-9) 0;
+  background-color: var(--bg-primary);
+  border-bottom: 3px solid var(--border-dark);
+  position: relative;
+}
+
+.sectionHeader {
+  margin-bottom: var(--space-8);
+}
+
+.sectionSuper {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-coral);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  padding-left: 20px;
+}
+
+@media (min-width: 768px) {
+  .timeline {
+    padding-left: 40px;
+  }
+}
+
+.timelineLine {
+  position: absolute;
+  top: 15px;
+  bottom: 20px;
+  left: 6px;
+  width: 4px;
+  background-color: var(--border-dark);
+}
+
+@media (min-width: 768px) {
+  .timelineLine {
+    left: 14px;
+  }
+}
+
+.timelineItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineNode {
+  position: absolute;
+  left: -20px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid var(--border-dark);
+  background-color: var(--accent-coral);
+  z-index: 2;
+  box-shadow: 0 0 0 4px var(--bg-primary);
+}
+
+@media (min-width: 768px) {
+  .timelineNode {
+    left: -33px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.expCard {
+  background-color: var(--bg-surface);
+  border: 3px solid var(--border-dark);
+  box-shadow: 8px 8px 0px var(--border-dark);
+  padding: var(--space-6);
+  transition: transform 0.2s ease;
+}
+
+.expCard:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 12px 12px 0px var(--border-dark);
+}
+
+.expHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--border-light);
+}
+
+.roleTitle {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.companyName {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.periodBadge {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  background-color: var(--bg-dark);
+  color: var(--text-inverse);
+  box-shadow: 3px 3px 0px var(--accent-coral);
+  text-transform: uppercase;
+}
+
+.bulletsList {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bulletItem {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.bulletItem strong {
+  color: var(--text-primary);
+}
+
+.bulletPointer {
+  color: var(--accent-coral);
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.expTechRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1.5px dashed var(--border-light);
+}
+
+.expTechLabel {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+
+/* Unlocked Platforms Delivered Row */
+.unlockedPlatformsBlock {
+  margin-top: var(--space-4);
+  padding: 12px 14px;
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border-dark);
+}
+
+.unlockedPlatformsHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 900;
+  color: #10B981;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.unlockedPlatformsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.platformPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  background: #FFFFFF;
+  color: #0A0A0A;
+  border: 1.5px solid var(--border-dark);
+  box-shadow: 2px 2px 0px var(--border-dark);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.platformPill:hover {
+  background: var(--accent-coral);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--border-dark);
+}

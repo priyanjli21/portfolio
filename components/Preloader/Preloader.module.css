@@ -1,0 +1,174 @@
+.preloaderOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  overflow: hidden;
+  transition: opacity 0.4s ease 0.3s;
+}
+
+.overlayFading {
+  pointer-events: none;
+}
+
+/* Shutter Doors (Top & Bottom Reveal) */
+.shutterDoor {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50.5%;
+  background-color: #0A0A0A;
+  z-index: 1;
+  transition: transform 0.65s cubic-bezier(0.85, 0, 0.15, 1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+}
+
+.shutterTop {
+  top: 0;
+  border-bottom: 2px solid var(--accent-coral);
+  transform-origin: top;
+}
+
+.shutterBottom {
+  bottom: 0;
+  border-top: 2px solid var(--accent-gold);
+  transform-origin: bottom;
+}
+
+.shutterTopOpen {
+  transform: translateY(-100%);
+}
+
+.shutterBottomOpen {
+  transform: translateY(100%);
+}
+
+/* Center HUD Console */
+.centerConsole {
+  position: relative;
+  z-index: 2;
+  width: min(90vw, 480px);
+  background: #141414;
+  border: 3px solid #FAF8F5;
+  box-shadow: 8px 8px 0px var(--accent-coral);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.consoleFadeOut {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+/* Corner Reticle Crosshairs */
+.reticle {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: var(--accent-gold);
+  pointer-events: none;
+}
+
+.reticleTL { top: 6px; left: 8px; }
+.reticleTR { top: 6px; right: 8px; }
+.reticleBL { bottom: 6px; left: 8px; }
+.reticleBR { bottom: 6px; right: 8px; }
+
+/* System Tag */
+.systemTag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #FAF8F5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.livePulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-lime);
+  box-shadow: 0 0 8px var(--accent-lime);
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+
+/* Counter */
+.counterRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 6px;
+  line-height: 0.9;
+}
+
+.bigNumber {
+  font-family: var(--font-sans);
+  font-size: clamp(4.5rem, 12vw, 6.5rem);
+  font-weight: 900;
+  color: #FAF8F5;
+  letter-spacing: -0.04em;
+}
+
+.percentSign {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--accent-coral);
+}
+
+/* Progress Bar */
+.progressBarTrack {
+  width: 100%;
+  height: 12px;
+  background-color: #0A0A0A;
+  border: 2px solid #FAF8F5;
+  padding: 2px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-indigo) 0%, var(--accent-coral) 60%, var(--accent-gold) 100%);
+  transition: width 0.08s ease-out;
+}
+
+/* Status Line */
+.statusLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.promptArrow {
+  color: var(--accent-coral);
+  font-weight: 900;
+}
+
+.statusMsg {
+  color: #FAF8F5;
+  font-size: 0.74rem;
+}

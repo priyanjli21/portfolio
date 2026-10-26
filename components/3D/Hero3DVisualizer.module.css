@@ -1,0 +1,99 @@
+.canvasWrapper {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background: #0A0A0A;
+  border: 3px solid #0A0A0A;
+  box-shadow: 6px 6px 0px var(--accent-indigo);
+  overflow: hidden;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.hudOverlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+  font-family: var(--font-mono);
+  z-index: 2;
+}
+
+.hudHeader {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid var(--accent-coral);
+  padding: 6px 12px;
+}
+
+.hudTitle {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--accent-coral);
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hudSub {
+  font-size: 0.65rem;
+  color: #D1D5DB;
+  margin-top: 2px;
+}
+
+.telemetryGrid {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.telemetryCard {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid #333333;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #FAF8F5;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.telemetryKey {
+  color: #9CA3AF;
+}
+
+.telemetryVal {
+  color: var(--accent-gold);
+  font-weight: 700;
+}
+
+.interactionHint {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px dashed #666;
+  color: #BBB;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  padding: 3px 8px;
+}

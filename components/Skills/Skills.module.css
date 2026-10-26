@@ -1,0 +1,425 @@
+.skillsSection {
+  padding: var(--space-9) 0 var(--space-8);
+  background-color: var(--bg-dark);
+  border-bottom: 3px solid var(--border-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.sectionHeader {
+  margin-bottom: var(--space-7);
+}
+
+.sectionSuper {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-coral);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  color: var(--text-inverse);
+}
+
+/* ========== Marquee System ========== */
+.marqueeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 0;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+}
+
+.marqueeTrack {
+  width: 100%;
+  overflow: visible;
+  position: relative;
+  padding: 0;
+}
+
+.marqueeInner {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  will-change: transform;
+  align-items: center;
+  padding: 0;
+}
+
+/* Scroll Directions */
+.scrollLeft {
+  animation: marqueeLeft linear infinite;
+}
+
+.scrollRight {
+  animation: marqueeRight linear infinite;
+}
+
+/* Speed Variants */
+.speedNormal {
+  animation-duration: 35s;
+}
+
+.speedSlow {
+  animation-duration: 48s;
+}
+
+.speedFast {
+  animation-duration: 28s;
+}
+
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Pause on hover */
+.marqueeTrack:hover .marqueeInner {
+  animation-play-state: paused;
+}
+
+/* ========== Skill Tile ========== */
+.skillTile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background-color: var(--bg-dark-surface);
+  border: 2.5px solid;
+  box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.25s var(--ease-spring);
+  cursor: default;
+  user-select: none;
+  position: relative;
+}
+
+.skillTile:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 6px 8px 0px rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.06);
+  z-index: 10;
+}
+
+.tileName {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-inverse);
+}
+
+.tileDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px currentColor;
+}
+
+/* ========== Category Legend ========== */
+.categoryLabels {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.1);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.categoryLabels::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.categoryDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.categoryName {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-inverse-muted);
+  white-space: nowrap;
+}
+
+.categoryCount {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-inverse-muted);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1px 6px;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+/* ========================================================================= */
+/* UNLOCKED: Skill-to-Project Traceability Matrix                            */
+/* ========================================================================= */
+.unlockedBanner {
+  background: #111827;
+  border: 2px solid #10B981;
+  box-shadow: 4px 4px 0px #10B981;
+  padding: 14px 20px;
+  margin-bottom: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.unlockedBannerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.unlockedBannerTag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #10B981;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.unlockedBannerSub {
+  font-size: 0.84rem;
+  color: #D1D5DB;
+}
+
+.toggleViewBtn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 6px 12px;
+  background: #1F2937;
+  color: #FAF8F5;
+  border: 1.5px solid #374151;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+}
+
+.toggleViewBtn:hover {
+  background: #10B981;
+  color: #0A0A0A;
+}
+
+.categoryTabRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: var(--space-6);
+}
+
+.categoryTabBtn {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 8px 14px;
+  background: #18181B;
+  color: #A1A1AA;
+  border: 2px solid #27272A;
+  box-shadow: 2px 2px 0px #09090B;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+}
+
+.categoryTabBtn:hover {
+  background: #27272A;
+  color: #FAF8F5;
+  transform: translate(-1px, -1px);
+}
+
+.activeCategoryTab {
+  background: #FAF8F5 !important;
+  color: #09090B !important;
+  border-color: #FAF8F5 !important;
+  box-shadow: 3px 3px 0px var(--accent-coral) !important;
+}
+
+.traceabilityGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .traceabilityGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .traceabilityGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.traceabilityCard {
+  background: #18181B;
+  border: 2px solid #27272A;
+  box-shadow: 3px 3px 0px #000000;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.traceabilityCard:hover {
+  transform: translateY(-2px);
+  border-color: #52525B;
+  box-shadow: 5px 5px 0px #000000;
+}
+
+.cardTopRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.skillTitle {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #FAF8F5;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.scaleBadge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: rgba(16, 185, 129, 0.12);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 3px 7px;
+  display: block;
+  width: fit-content;
+  letter-spacing: 0.03em;
+  margin-top: 4px;
+}
+
+.skillRoleDesc {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #A1A1AA;
+  margin: 0;
+}
+
+.projectsBlock {
+  border-top: 1px solid #27272A;
+  padding-top: 10px;
+}
+
+.projectsLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #71717A;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.projectPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.projectPillLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  background: #27272A;
+  color: #E4E4E7;
+  border: 1px solid #3F3F46;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.projectPillLink:hover {
+  background: var(--accent-coral);
+  color: #0A0A0A;
+  border-color: var(--accent-coral);
+}
